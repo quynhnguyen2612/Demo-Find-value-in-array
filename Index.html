@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Nhập giá trị</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Nhập giá trị" id="num"></td>
+            <td><button onclick="find()">Result</button></td>
+        </tr>
+    </table>
+    <p id="result"></p>
+    <script>
+        //Viết một chương trình JavaScript để tìm một giá tri được nhập vào từ hộp thoại có nằm trong mảng hay không.
+        // Nếu có in ra vị trí của phần tử đó. Trong trường hợp không tìm thấy thông báo không tìm thấy phần tử.
+        function find() {
+            let value = +document.getElementById('num').value;
+            let numbers = [-2, 6, 1, 4, 3, 10];
+            let index = -1;
+            for (let i = 0; i < numbers.length; i++) {
+                if (value === numbers[i]) {
+                    index = i;
+                }
+            }
+            if(index>-1){
+                 document.getElementById('result').innerHTML = "Value " + value + " found at " + index;
+            }
+            else{
+                document.getElementById('result').innerHTML = "Value " + value + " not found";
+            }
+        }
+
+
+    </script>
+</body>
+</html>
